@@ -209,4 +209,5 @@ __marimo__/
 /data/
 rename.py
 update_metadata.py
-logs/
+/logs/
+/artifacts/
