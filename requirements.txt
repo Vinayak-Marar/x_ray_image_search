@@ -9,3 +9,4 @@ pillow
 ftfy
 regex
 dvc
+dvc[s3]

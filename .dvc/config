@@ -1,0 +1,6 @@
+[core]
+    remote = myremote
+['remote "mydrive"']
+    url = gdrive://1PlogFvZVTgsXDlnb9hPznDoFwbazZ510
+['remote "myremote"']
+    url = s3://x-ray-data-search/x-ray-data
