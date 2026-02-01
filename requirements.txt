@@ -6,7 +6,6 @@ streamlit
 torch
 git+https://github.com/openai/CLIP.git
 pillow
-tqdm
 ftfy
 regex
 dvc

@@ -24,6 +24,10 @@ def load_embeddings():
 
 embeddings, image_paths, image_categories = load_embeddings()
 
+# Normalize paths
+image_paths = [p.replace("\\", "/") for p in image_paths]
+
+
 
 # Streamlit UI
 
