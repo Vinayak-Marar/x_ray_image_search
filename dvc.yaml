@@ -1,0 +1,25 @@
+stages:
+  validate_data:
+    cmd: python -m src.data.validate
+    deps:
+      - src/data/validate.py
+      - data/raw
+      - data/metadata.csv
+
+  process_images:
+    cmd: python -m src.data.process
+    deps:
+      - src/data/process.py
+      - data/raw
+    outs:
+      - data/processed
+
+
+  generate_embeddings:
+    cmd: python -m src.feature.generate_embeddings
+    deps:
+      - src/feature/generate_embeddings.py
+      - data/processed
+    outs:
+      - artifacts/image_embeddings.npy
+      - artifacts/image_paths.npy

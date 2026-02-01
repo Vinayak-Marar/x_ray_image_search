@@ -1,0 +1,57 @@
+schema: '2.0'
+stages:
+  validate_data:
+    cmd: python -m src.data.validate
+    deps:
+    - path: data/metadata.csv
+      hash: md5
+      md5: ccb91f6743309739848ea35a9d31a4fb
+      size: 9121
+    - path: data/raw
+      hash: md5
+      md5: f898c5884689a4426eb895e63cfca82c.dir
+      size: 20285407
+      nfiles: 118
+    - path: src/data/validate.py
+      hash: md5
+      md5: d881c3518ab0be7466e8c41df682e76a
+      size: 2841
+  process_images:
+    cmd: python -m src.data.process
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: f898c5884689a4426eb895e63cfca82c.dir
+      size: 20285407
+      nfiles: 118
+    - path: src/data/process.py
+      hash: md5
+      md5: 09fa19f64a0b3efaa4a086ad6ea2ce9e
+      size: 1551
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: a21b695200c473660a776c5f9cda3262.dir
+      size: 1555300
+      nfiles: 118
+  generate_embeddings:
+    cmd: python -m src.feature.generate_embeddings
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: a21b695200c473660a776c5f9cda3262.dir
+      size: 1555300
+      nfiles: 118
+    - path: src/feature/generate_embeddings.py
+      hash: md5
+      md5: ded139cec146ff92d27be642a010cb04
+      size: 2220
+    outs:
+    - path: artifacts/image_embeddings.npy
+      hash: md5
+      md5: d95113a6fce3d7b69ac0fcdf3b84b399
+      size: 241792
+    - path: artifacts/image_paths.npy
+      hash: md5
+      md5: 561b300e991dd1fffb933a9f41325336
+      size: 16648
