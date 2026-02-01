@@ -3,7 +3,6 @@ import numpy as np
 from PIL import Image
 import torch
 import clip
-from tqdm import tqdm
 
 MODEL_NAME = "ViT-B/32"
 DEVICE = "cpu"
