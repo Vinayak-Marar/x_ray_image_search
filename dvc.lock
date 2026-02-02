@@ -5,53 +5,53 @@ stages:
     deps:
     - path: data/metadata.csv
       hash: md5
-      md5: ccb91f6743309739848ea35a9d31a4fb
-      size: 9121
+      md5: 3f0f31440c99663da3580fa89f0e6201
+      size: 50122
     - path: data/raw
       hash: md5
-      md5: f898c5884689a4426eb895e63cfca82c.dir
-      size: 20285407
-      nfiles: 118
+      md5: b87ebcb23a034117dca6971b59a9d607.dir
+      size: 42256534
+      nfiles: 555
     - path: src/data/validate.py
       hash: md5
-      md5: d881c3518ab0be7466e8c41df682e76a
-      size: 2841
+      md5: 412cac03914f240b2ea7eb23af29e474
+      size: 3318
   process_images:
     cmd: python -m src.data.process
     deps:
     - path: data/raw
       hash: md5
-      md5: f898c5884689a4426eb895e63cfca82c.dir
-      size: 20285407
-      nfiles: 118
+      md5: b87ebcb23a034117dca6971b59a9d607.dir
+      size: 42256534
+      nfiles: 555
     - path: src/data/process.py
       hash: md5
-      md5: 09fa19f64a0b3efaa4a086ad6ea2ce9e
-      size: 1551
+      md5: ae4c1be4fc9cf530d00738401485e423
+      size: 2446
     outs:
     - path: data/processed
       hash: md5
-      md5: a21b695200c473660a776c5f9cda3262.dir
-      size: 1555300
-      nfiles: 118
+      md5: 3c714b2a2923e32059d59b139e93d19d.dir
+      size: 6524074
+      nfiles: 555
   generate_embeddings:
     cmd: python -m src.feature.generate_embeddings
     deps:
     - path: data/processed
       hash: md5
-      md5: a21b695200c473660a776c5f9cda3262.dir
-      size: 1555300
-      nfiles: 118
+      md5: 3c714b2a2923e32059d59b139e93d19d.dir
+      size: 6524074
+      nfiles: 555
     - path: src/feature/generate_embeddings.py
       hash: md5
-      md5: ded139cec146ff92d27be642a010cb04
-      size: 2220
+      md5: 79c5265773372ec0a8e44b40863035f4
+      size: 3477
     outs:
     - path: artifacts/image_embeddings.npy
       hash: md5
-      md5: d95113a6fce3d7b69ac0fcdf3b84b399
-      size: 241792
+      md5: 1c10416c9475d0d8ed51fb1502a32cbd
+      size: 1136768
     - path: artifacts/image_paths.npy
       hash: md5
-      md5: 561b300e991dd1fffb933a9f41325336
-      size: 16648
+      md5: 537d511cc1990a50a139f4ec2ecd9312
+      size: 88928

@@ -88,35 +88,6 @@ CLIP projects images and text into a **shared embedding space**, enabling multim
 
 ---
 
-## Project Structure
-
-```text
-x_ray_image_search/
-│
-├── data/
-│   ├── raw/                # Raw X-ray images
-│   ├── processed/          # Preprocessed images
-│   └── metadata.csv
-│
-├── notebooks/
-│   ├── data_validation.ipynb
-│   ├── preprocessing.ipynb
-│   ├── embedding_generation.ipynb
-│   └── search.ipynb
-│
-├── src/
-│   ├── validate_data.py
-│   └── process.py
-│
-├── dvc.yaml
-├── Dockerfile
-├── ci.yaml
-├── requirements.txt
-└── README.md
-````
-
----
-
 ## Setup and Usage
 
 ### 1. Clone the repository
@@ -141,7 +112,7 @@ dvc pull
 ### 4. Run Streamlit UI
 
 ```bash
-streamlit run src/app.py
+streamlit run app.py
 ```
 
 * Upload a query image or type a text description
