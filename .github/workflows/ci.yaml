@@ -33,7 +33,8 @@ jobs:
 
     - name: Pull data
       run: |
-        dvc pull
+        dvc pull data/raw.dvc
+        dvc pull data/metadata.csv.dvc
 
     - name: Run DVC pipeline
       run: |
