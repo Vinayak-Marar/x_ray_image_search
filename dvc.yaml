@@ -1,4 +1,12 @@
 stages:
+
+  load_data:
+    cmd: echo "Raw data versioning"
+    outs:
+      - data/raw
+      - data/metadata.csv
+
+
   validate_data:
     cmd: python -m src.data.validate
     deps:
