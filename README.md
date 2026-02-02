@@ -72,7 +72,7 @@ CLIP projects images and text into a **shared embedding space**, enabling multim
 - **Top-k results**: Default `k=5`, configurable `k=1–20`  
 - **Minimum similarity thresholds**:  
   - Text-to-image: 0.25  
-  - Image-to-image: 0.95  
+  - Image-to-image: 0.90 
 - Only images above threshold are returned  
 - Retrieval results are **displayed interactively via Streamlit**
 

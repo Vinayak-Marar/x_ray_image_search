@@ -60,7 +60,7 @@ def search_by_text(query: str, model, embeddings: np.ndarray, image_paths: np.nd
         logging.error(f"Text search failed for query '{query}': {e}")
         return []
 
-def search_by_image(uploaded_image: Union[str, Image.Image], model, preprocess, embeddings: np.ndarray, image_paths: np.ndarray, device: str = "cpu", top_k: int = 5, min_similarity: float = 0.95) -> List[Tuple[str, float]]:
+def search_by_image(uploaded_image: Union[str, Image.Image], model, preprocess, embeddings: np.ndarray, image_paths: np.ndarray, device: str = "cpu", top_k: int = 5, min_similarity: float = 0.90) -> List[Tuple[str, float]]:
     """
     Image-to-Image search with input validation and memory safety.
     """
