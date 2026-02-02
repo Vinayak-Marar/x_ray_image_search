@@ -81,7 +81,7 @@ if mode == "Text":
     query = st.text_input("Enter your text query")
     if st.button("Search") and query:
         try:
-            results = search_by_text(query, model, filtered_embeddings, filtered_paths, DEVICE, top_k)
+            results = search_by_text(query, model, filtered_embeddings, filtered_paths, DEVICE, top_k, 0.25)
             if not results:
                 st.info("No relevant images found for this query.")
             else:
@@ -104,7 +104,7 @@ if mode == "Image":
     uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
     if uploaded_file and st.button("Search"):
         try:
-            results = search_by_image(uploaded_file, model, preprocess, filtered_embeddings, filtered_paths, DEVICE, top_k)
+            results = search_by_image(uploaded_file, model, preprocess, filtered_embeddings, filtered_paths, DEVICE, top_k, 0.90)
             if not results:
                 st.info("No relevant images found for this query.")
             else:
